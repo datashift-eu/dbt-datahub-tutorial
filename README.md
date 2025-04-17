@@ -2,6 +2,8 @@
 
 A hands-on tutorial on ingesting dbt metadata into a locally running DataHub instance.
 
+![Architecture](docs/images/architecture.png)
+
 ## Setup
 
 ### Requirements
