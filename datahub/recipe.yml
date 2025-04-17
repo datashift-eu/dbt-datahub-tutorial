@@ -1,0 +1,37 @@
+source:
+  type: dbt
+  config:
+    manifest_path: ./dbt/target/manifest.json
+    catalog_path: ./dbt/target/catalog.json
+    run_results_path: ./dbt/target/run_results.json
+    target_platform: postgres
+    test_warnings_are_errors: True
+    meta_mapping:
+      business_owner:
+        match: .*
+        operation: add_owner
+        config:
+          owner_type: user
+          owner_category: BUSINESS_OWNER
+      data_steward:
+        match: .*
+        operation: add_owner
+        config:
+          owner_type: user
+          owner_category: DATA_STEWARD
+      technical_owner:
+        match: .*
+        operation: add_owner
+        config:
+          owner_type: user
+          owner_category: TECHNICAL_OWNER
+      terms_list:
+        match: .*
+        operation: add_terms
+        config:
+          separator: ','
+
+sink:
+  type: datahub-rest
+  config:
+    server: http://localhost:8080

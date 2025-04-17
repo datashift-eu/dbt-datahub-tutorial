@@ -1,0 +1,17 @@
+version: 2
+
+models:
+  - name: shipments_by_sender
+    description: Aggregated shipment data grouped by sender
+    meta:
+      terms_list: Shipment,Sender
+    columns:
+      - name: sender
+        data_type: text
+        description: Company shipping the package
+      - name: shipments
+        data_type: integer
+        description: Total number of shipments sent by the company
+      - name: avg_weight
+        data_type: numeric
+        description: Average weight of shipments sent by the company, in kilograms

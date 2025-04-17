@@ -1,0 +1,15 @@
+version: 2
+
+seeds:
+  - name: delivered_shipments
+    config:
+      schema: sample_data
+      column_types:
+        tracking_id: text
+        sender: text
+        recipient: text
+        shipment_type: text
+        weight_kg: numeric(5, 2)
+        origin: text
+        destination: text
+        delivery_date: date

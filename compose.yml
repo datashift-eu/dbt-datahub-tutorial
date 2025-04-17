@@ -1,0 +1,19 @@
+services:
+  postgres:
+    image: postgres:17.4
+    environment:
+      POSTGRES_USER: dbt
+      POSTGRES_PASSWORD: dbt
+      POSTGRES_DB: tutorial
+    ports:
+      - 5432:5432
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+  dbt:
+    image: ghcr.io/dbt-labs/dbt-postgres:1.9.0
+    platform: linux/amd64
+    volumes:
+      - ./dbt:/usr/app/dbt
+
+volumes:
+  postgres_data:

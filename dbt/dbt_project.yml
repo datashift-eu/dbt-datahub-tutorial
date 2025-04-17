@@ -1,0 +1,13 @@
+name: dbt_datahub_tutorial
+version: 0.1.0
+
+profile: dbt_datahub_tutorial
+
+seeds:
+  +schema: sample_data
+
+tests:
+  +severity: warn
+
+flags:
+  send_anonymous_usage_stats: false

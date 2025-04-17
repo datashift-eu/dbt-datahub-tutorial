@@ -1,0 +1,20 @@
+[project]
+name = "dbt-datahub-tutorial"
+version = "0.1.0"
+description = "A tutorial on ingesting dbt metadata into DataHub"
+authors = [
+    {name = "Alperen Akteke", email = "alperen.akteke@datashift.eu"},
+    {name = "Frederik Druyts", email = "frederik.druyts@datashift.eu"},
+]
+license = "MIT"
+requires-python = ">=3.11"
+dependencies = [
+    "acryl-datahub[dbt] (>=1.0.0.2,<2.0.0.0)"
+]
+
+[tool.poetry]
+package-mode = false
+
+[build-system]
+requires = ["poetry-core>=2.0.0,<3.0.0"]
+build-backend = "poetry.core.masonry.api"

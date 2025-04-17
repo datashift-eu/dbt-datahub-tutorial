@@ -1,0 +1,56 @@
+version: 2
+
+models:
+  - name: stg_delivered_shipments
+    description: High-level summary of delivered shipments
+    meta:
+      business_owner: jesse.vanhaeren@datashift.eu
+      data_steward: frederik.druyts@datashift.eu
+      technical_owner: alperen.akteke@datashift.eu
+      terms_list: Shipment,Sender
+    columns:
+      - name: tracking_id
+        data_type: text
+        description: Unique tracking identifier associated with each shipment
+        data_tests:
+          - unique
+          - not_null
+      - name: sender
+        data_type: text
+        description: Company shipping the parcel
+        data_tests:
+          - not_null
+      - name: recipient
+        data_type: text
+        description: Recipient of the parcel
+        data_tests:
+          - not_null
+      - name: shipment_type
+        data_type: text
+        description: Type of parcel being shipped
+        data_tests:
+          - not_null
+      - name: weight_kg
+        data_type: numeric
+        description: Weight of the parcel in kilograms
+        data_tests:
+          - not_null
+          - dbt_utils.accepted_range:
+              name: weight_within_operational_limits
+              min_value: 0.05
+              max_value: 100.00
+      - name: origin
+        data_type: text
+        description: City the parcel is shipped from
+        data_tests:
+          - not_null
+      - name: destination
+        data_type: text
+        description: City the parcel is shipped to
+        data_tests:
+          - not_null
+      - name: delivery_date
+        data_type: date
+        description: Date of parcel delivery
+        data_tests:
+          - not_null
