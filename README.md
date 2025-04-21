@@ -18,7 +18,9 @@ A hands-on tutorial on ingesting dbt metadata into a locally running DataHub ins
 
 ## Usage
 
-**Note**: These are minimal instructions. For more context, follow the step-by-step tutorial on Medium.
+**Note**: These are minimal instructions. For more context, follow the [tutorial on Medium].
+
+[tutorial on Medium]: https://medium.com/datashift-eu/dbt-to-datahub-a-practical-guide-to-metadata-ingestion-7bc15d56c72a
 
 Install the project dependencies.
 
